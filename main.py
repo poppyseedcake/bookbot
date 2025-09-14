@@ -10,8 +10,7 @@ def main():
     words = count_words(book)
     print(f'{words} words found in the document')
     letters = count_letters(book)
+    print(letters)
 
-    for key in letters:
-        print(f'{key}: {letters[key]}')
 
 main()

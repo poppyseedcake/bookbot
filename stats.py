@@ -5,7 +5,7 @@ def count_words(text):
 def count_letters(text):
     letters = {}
     for char in text:
-        char = "'" + char.lower() + "'"
+        char = char.lower()
         if char not in letters:
             letters[char] = 1
         else:
