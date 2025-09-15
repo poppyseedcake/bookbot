@@ -11,3 +11,16 @@ def count_letters(text):
         else:
             letters[char] += 1
     return letters
+
+def sort_on(items):
+    return items["num"]
+
+def sort_dict(dict):
+    list_dict = []
+
+    for key in dict:
+        list_dict.append({"char": key, "num": dict[key]})
+
+    sorted = list_dict.sort(reverse=True, key=sort_on)
+    print(sorted)
+    return sorted

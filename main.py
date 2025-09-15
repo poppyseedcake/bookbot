@@ -1,4 +1,4 @@
-from stats import count_letters, count_words
+from stats import count_letters, count_words, sort_dict
 
 def get_book_text(filepath):
     with open(filepath) as f:
@@ -10,7 +10,8 @@ def main():
     words = count_words(book)
     print(f'{words} words found in the document')
     letters = count_letters(book)
-    print(letters)
+    sorted = sort_dict(letters)
+    print(sorted)
 
 
 main()
