@@ -21,6 +21,5 @@ def sort_dict(dict):
     for key in dict:
         list_dict.append({"char": key, "num": dict[key]})
 
-    sorted = list_dict.sort(reverse=True, key=sort_on)
-    print(sorted)
-    return sorted
+    list_dict.sort(reverse=True, key=sort_on)
+    return list_dict
