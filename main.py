@@ -1,13 +1,14 @@
 from stats import count_letters, count_words, sort_dict
+import sys
 
 def get_book_text(filepath):
     with open(filepath) as f:
         file_contents = f.read()
     return file_contents
 
-def print_out(words, list):
+def print_out(words, list, path):
     print("============ BOOKBOT ============")
-    print("Analyzing book found at books/frankenstein.txt...")
+    print(f"Analyzing book found at {path}...")
     print("----------- Word Count ----------")
     print(f'Found {words} total words')
     print("--------- Character Count -------")
@@ -17,12 +18,16 @@ def print_out(words, list):
     print("============= END ===============")
 
 def main():
-    book = get_book_text("books/frankenstein.txt")
+    if len(sys.argv) < 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+
+    book_path = sys.argv[1]
+    book = get_book_text(book_path)
     words = count_words(book)
-    #print(f'{words} words found in the document')
     letters = count_letters(book)
     sorted = sort_dict(letters)
 
-    print_out(words, sorted)
+    print_out(words, sorted, book_path)
 
 main()
